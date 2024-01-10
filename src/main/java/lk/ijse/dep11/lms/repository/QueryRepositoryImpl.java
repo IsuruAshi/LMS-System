@@ -6,8 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Component
-public class QueryRepositoryImpl implements QueryRepository{
-
+public class QueryRepositoryImpl implements QueryRepository {
     @PersistenceContext
     private EntityManager em;
 }

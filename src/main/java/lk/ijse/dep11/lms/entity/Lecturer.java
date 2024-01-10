@@ -34,7 +34,7 @@ public class Lecturer {
     private Picture picture;
 
     @ToString.Exclude
-    @OneToOne(mappedBy = "lecture",cascade = {CascadeType.REMOVE})
+    @OneToOne(mappedBy = "lecturer",cascade = {CascadeType.REMOVE})
     private LinkedIn linkedIn;
 
     public Lecturer(String name, String designation, String qualifications, LecturerType type, int displayOrder) {
