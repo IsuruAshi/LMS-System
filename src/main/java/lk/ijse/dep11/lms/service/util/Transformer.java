@@ -35,7 +35,7 @@ public class Transformer {
         if(lecturerTO.getLinkedIn()!=null) lecturer.getLinkedIn().setLecturer(lecturer);
         return lecturer;
     }
-    public LecturerTO toLecturerTO(Lecturer lecturer){return mapper.map(lecturer,LecturerTO.class)}
+    public LecturerTO toLecturerTO(Lecturer lecturer){return mapper.map(lecturer,LecturerTO.class);}
     public List<LecturerTO>toLecturerTOList(List<Lecturer> lecturersList){
         return lecturersList.stream().map(this::toLecturerTO).collect(Collectors.toList());
     }
