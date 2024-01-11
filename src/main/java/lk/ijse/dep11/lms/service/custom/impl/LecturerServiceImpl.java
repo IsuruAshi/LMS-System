@@ -12,10 +12,17 @@ import lk.ijse.dep11.lms.util.LecturerType;
 import java.util.List;
 
 public class LecturerServiceImpl implements LecturerService {
-//    private final LectureRepository lectureRepository;
-//    private final LinkedInRepository linkedInRepository;
-//    private final PictureRepository pictureRepository;
-//    private final Transformer transformer;
+    private final LectureRepository lectureRepository;
+    private final LinkedInRepository linkedInRepository;
+    private final PictureRepository pictureRepository;
+    private final Transformer transformer;
+
+    public LecturerServiceImpl(LectureRepository lectureRepository, LinkedInRepository linkedInRepository, PictureRepository pictureRepository, Transformer transformer) {
+        this.lectureRepository = lectureRepository;
+        this.linkedInRepository = linkedInRepository;
+        this.pictureRepository = pictureRepository;
+        this.transformer = transformer;
+    }
 
     @Override
     public LecturerTO saveLecturer(LecturerReqTO lecturerReqTO) {
