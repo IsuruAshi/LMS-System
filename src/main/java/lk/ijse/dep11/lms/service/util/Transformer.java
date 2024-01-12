@@ -6,11 +6,12 @@ import lk.ijse.dep11.lms.entity.Picture;
 import lk.ijse.dep11.lms.to.LecturerTO;
 import lk.ijse.dep11.lms.to.request.LecturerReqTO;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Component
 public class Transformer {
     private final ModelMapper mapper;
 

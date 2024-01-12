@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.*;
 import javax.validation.groups.Default;
@@ -27,18 +28,19 @@ public class LecturerReqTO implements Serializable {
     private String qualifications;
     @NotNull(message = "Type should be either full-time or visiting")
     private LecturerType type;
-    @NotNull(message = "Display order can't be empty")
+    @Null(groups = Create.class,message = "Display order should be empty ")
+    @NotNull(groups = Update.class,message = "Display order can't be empty")
     @PositiveOrZero(message = "Invalid Display Order")
     private Integer displayOrder;
     @LecturerImage
-    private String picture;
+    private MultipartFile picture;
     @Pattern(regexp = "http(s)://.+$",message = "Invalid Linkedin Url")
     private String linkedIn;
 
     public interface Create extends Default{}
     public interface Update extends Default{}
 
-    public LecturerReqTO(String name, String designation, String qualifications, LecturerType type, Integer displayOrder, String picture, String linkedIn) {
+    public LecturerReqTO(String name, String designation, String qualifications, LecturerType type, Integer displayOrder, MultipartFile picture, String linkedIn) {
         this.name = name;
         this.designation = designation;
         this.qualifications = qualifications;
